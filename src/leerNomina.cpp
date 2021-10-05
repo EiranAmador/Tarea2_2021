@@ -9,7 +9,7 @@ leerNomina::leerNomina(std::string dirArchivo){
     this->dirArchivo = dirArchivo;
 }
 
-int leerNomina::leer()
+double leerNomina::salarioBruto(int idEmpleado)
 {
     std::ifstream ifs(dirArchivo, std::ifstream::in);
 
@@ -32,6 +32,11 @@ int leerNomina::leer()
         pagoBruto = 0;
 
         stream >> id >> pagoBruto;
+
+        if(id == idEmpleado){
+
+            return pagoBruto;
+        }
     }
 
     ifs.close();

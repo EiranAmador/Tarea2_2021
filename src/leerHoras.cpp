@@ -9,7 +9,7 @@ leerHoras::leerHoras(std::string dirArchivo){
     this->dirArchivo = dirArchivo;
 }
 
-int leerHoras::leer()
+double leerHoras::salarioHoras(int idEmpleado)
 {
     std::ifstream ifs(dirArchivo, std::ifstream::in);
 
@@ -21,25 +21,25 @@ int leerHoras::leer()
     
     std::string linea {}; 
 
+
     int id {0};
-    std::string nombre {""};
-    std::string apellido {""};
-    std::string email {""};
-    int tipo {0};
-    int idSupervisor {0};
+    double montoHora {0};
+    double horasLaboradas {0};
 
     while (std::getline(ifs, linea)) {
         
         std::istringstream stream(linea);
 
         id = 0;
-        nombre = "";
-        apellido = "";
-        email = "";
-        0;
-        0;
+        montoHora = 0;
+        horasLaboradas = 0;
 
-        stream >> id >> nombre >> apellido >> email >> tipo >> idSupervisor;
+        stream >> id >> montoHora >> horasLaboradas;
+
+        if(id == idEmpleado){
+
+            return montoHora * horasLaboradas;
+        }
     }
 
     ifs.close();

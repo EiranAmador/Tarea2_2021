@@ -11,7 +11,7 @@ class leerHoras : public lectura {
 
     public:
         leerHoras(std::string dirArchivo);
-        virtual int leer();
+        virtual double salarioHoras(int idEmpleado);
 };
 
 #endif
