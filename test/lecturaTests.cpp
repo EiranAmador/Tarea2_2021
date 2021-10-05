@@ -16,14 +16,14 @@ namespace {
     TEST(LecturaTest, Leer_archivo_nomima) {
 
         leerNomina lectura("../Nomina.txt");
-        int resultado = lectura.leer();
+        int resultado = lectura.salarioBruto(1);
 
         EXPECT_EQ(0, resultado);
     }
     TEST(LecturaTest, Leer_archivo_horas_trabajadas) {
 
         leerHoras lectura("../HorasTrabajadas.txt");
-        int resultado = lectura.leer();
+        int resultado = lectura.salarioHoras(1);
 
         EXPECT_EQ(0, resultado);
     }

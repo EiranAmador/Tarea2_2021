@@ -3,9 +3,7 @@
 
 #include <string>
 
-#include "lectura.h"
-
-class leerNomina : public lectura {
+class leerNomina{
 
     std::string dirArchivo = "../Nomina.txt";
 

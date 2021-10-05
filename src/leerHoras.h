@@ -3,9 +3,7 @@
 
 #include <string>
 
-#include "lectura.h"
-
-class leerHoras : public lectura {
+class leerHoras {
 
     std::string dirArchivo = "../HorasTrabajadas.txt";
 
