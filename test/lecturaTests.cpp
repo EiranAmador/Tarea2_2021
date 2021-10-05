@@ -16,7 +16,7 @@ namespace {
     TEST(LecturaTest, Devolver_salario_por_nomina) {
 
         leerNomina lectura("../Nomina.txt");
-        int resultado = lectura.salarioBruto(7);
+        double resultado = lectura.salarioBruto(7);
 
         double resultadoEsperado = 4500.41;
 
@@ -25,7 +25,7 @@ namespace {
     TEST(LecturaTest, Devolver_salario_por_horas) {
 
         leerHoras lectura("../HorasTrabajadas.txt");
-        int resultado = lectura.salarioHoras(473);
+        double resultado = lectura.salarioHoras(473);
 
         double resultadoEsperado = 43.66*12;
 
