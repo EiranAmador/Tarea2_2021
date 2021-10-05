@@ -7,8 +7,10 @@
 
 class leerNomina : public lectura {
 
-    public:
+    std::string dirArchivo = "../Nomina.txt";
 
+    public:
+        leerNomina(std::string dirArchivo);
         virtual int leer();
 };
 

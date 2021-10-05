@@ -4,13 +4,18 @@
 #include <fstream>
 #include "leerNomina.h"
 
+leerNomina::leerNomina(std::string dirArchivo){
+
+    this->dirArchivo = dirArchivo;
+}
+
 int leerNomina::leer()
 {
-    std::ifstream ifs("../Nomina.txt", std::ifstream::in);
+    std::ifstream ifs(dirArchivo, std::ifstream::in);
 
     if (!ifs.is_open())
     {
-        std::cerr << "Error leyendo archivo Nomina.txt" << std::endl;
+        std::cerr << "Error leyendo archivo " << dirArchivo << std::endl;
         return -1;
     }
     

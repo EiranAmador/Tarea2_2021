@@ -4,13 +4,18 @@
 #include <fstream>
 #include "leerPersonas.h"
 
+leerPersonas::leerPersonas(std::string dirArchivo){
+
+    this->dirArchivo = dirArchivo;
+}
+
 int leerPersonas::leer()
 {
-    std::ifstream ifs("../Personas.txt", std::ifstream::in);
+    std::ifstream ifs(dirArchivo, std::ifstream::in);
 
     if (!ifs.is_open())
     {
-        std::cerr << "Error leyendo archivo Personas.txt" << std::endl;
+        std::cerr << "Error leyendo archivo " << dirArchivo << std::endl;
         return -1;
     }
     

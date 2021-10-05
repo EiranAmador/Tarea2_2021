@@ -7,8 +7,10 @@
 
 class leerHoras : public lectura {
 
-    public:
+    std::string dirArchivo = "../HorasTrabajadas.txt";
 
+    public:
+        leerHoras(std::string dirArchivo);
         virtual int leer();
 };
 
