@@ -1,10 +1,14 @@
 #include "nodo.h"
 #include <iostream>
 
-Nodo::Nodo(int id, int valor)
+Nodo::Nodo(int id, std::string Nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto)
 {
     this->id = id;
-    this->valor = valor;
+    this->nombre = nombre;
+    this->idSupervisor = idSupervisor;
+    this->nombreSupervisor = nombreSupervisor;
+    this->salarioBruto = salarioBruto;
+    this->salarioNeto = salarioNeto;
 }
 
 Nodo::~Nodo()
@@ -26,10 +30,14 @@ void Nodo::AgregarHijo(Nodo *hijo) {
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)
 {
     // Imprimir información del nodo
-    o << "Nodo: ";
+    o << "ID: ";
     o << nodo.id;
-    o << ". Valor: ";
-    o << nodo.valor;
+    o << "Nombre: ";
+    o << nodo.nombre;
+    o << "Nombre supervisor: ";
+    o << nodo.nombreSupervisor;
+    o << "Salario neto: ";
+    o << nodo.salarioNeto;
     o << std::endl;
 
     // Imprimir información de cada hijo
