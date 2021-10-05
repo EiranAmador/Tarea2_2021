@@ -9,7 +9,7 @@
                 "-g",
                 "${workspaceFolder}/src/*.cpp",
                 "-o",
-                "${workspaceFolder}/obj/tarea1"
+                "${workspaceFolder}/obj/tarea2"
             ],
             "options": {
                 "cwd": "${fileDirname}"

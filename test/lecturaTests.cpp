@@ -13,18 +13,22 @@ namespace {
 
         EXPECT_EQ(0, resultado);
     }
-    TEST(LecturaTest, Leer_archivo_nomima) {
+    TEST(LecturaTest, Devolver_salario_por_nomina) {
 
         leerNomina lectura("../Nomina.txt");
-        int resultado = lectura.salarioBruto(1);
+        int resultado = lectura.salarioBruto(7);
 
-        EXPECT_EQ(0, resultado);
+        double resultadoEsperado = 4500.41;
+
+        EXPECT_DOUBLE_EQ(resultadoEsperado, resultado);
     }
-    TEST(LecturaTest, Leer_archivo_horas_trabajadas) {
+    TEST(LecturaTest, Devolver_salario_por_horas) {
 
         leerHoras lectura("../HorasTrabajadas.txt");
-        int resultado = lectura.salarioHoras(1);
+        int resultado = lectura.salarioHoras(473);
 
-        EXPECT_EQ(0, resultado);
+        double resultadoEsperado = 43.66*12;
+
+        EXPECT_DOUBLE_EQ(resultadoEsperado, resultado);
     }
 }
