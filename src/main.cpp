@@ -1,10 +1,9 @@
 #ifndef UNIT_TEST
 
-#include "leerPersonas.cpp"
+#include "lectura.h"
+#include "leerPersonas.h"
 
-int main() {
-
-    leerPersonas();
+int main() {   
 
     return 0;
 }

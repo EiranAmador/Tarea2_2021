@@ -2,15 +2,15 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "leerPersonas.h"
+#include "leerHoras.h"
 
-int leerPersonas::leer()
+int leerHoras::leer()
 {
-    std::ifstream ifs("../Personas.txt", std::ifstream::in);
+    std::ifstream ifs("../HorasTrabajadas.txt", std::ifstream::in);
 
     if (!ifs.is_open())
     {
-        std::cerr << "Error leyendo archivo Personas.txt" << std::endl;
+        std::cerr << "Error leyendo archivo HorasTrabajadas.txt" << std::endl;
         return -1;
     }
     

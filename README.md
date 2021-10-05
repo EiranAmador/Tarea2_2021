@@ -2,7 +2,7 @@
 
 Proyecto desarrollado para el curso: _**Programación 2**_
 
-Desarrollado en Ubuntu Linux con Visual Studio Code
+Desarrollado en Ubuntu 20.04 Linux con Visual Studio Code
 
 * Lenguaje: C++17
 * Compilador: GCC
