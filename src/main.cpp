@@ -3,13 +3,16 @@
 #include <iostream>
 
 #include "../src/leerPersonas.h"
+#include "../src/arbolEmpleados.h"
 
 using namespace std;
 
 int main() {   
 
     leerPersonas *lectura = new leerPersonas();
-    lectura->leer();
+    arbolEmpleados *arbol = new arbolEmpleados();
+    arbol = lectura->generarArbol();
+    std::cout << *arbol;
 
     return 0;
 }

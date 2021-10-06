@@ -6,16 +6,16 @@
 
 class Nodo {
 
-    int id;
-    std::string nombre;
-    int idSupervisor;
-    std::string nombreSupervisor;
-    double salarioBruto;
-    double salarioNeto;
+    int id = 0;
+    std::string nombre = "";
+    int idSupervisor = 0;
+    std::string nombreSupervisor = "";
+    double salarioBruto = 0;
+    double salarioNeto = 0;
     std::vector<Nodo *> hijos;
     
     public:
-    Nodo(int id, std::string nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto);
+    Nodo(int id, std::string& nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto);
     ~Nodo();
 
     void AgregarHijo(Nodo *hijo);

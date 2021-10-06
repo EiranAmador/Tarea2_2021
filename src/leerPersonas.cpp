@@ -10,19 +10,19 @@
 leerPersonas::leerPersonas(std::string dirArchivo){
 
     this->dirArchivo = dirArchivo;
+    this->arbol = new arbolEmpleados();
 }
 
-int leerPersonas::leer()
+arbolEmpleados* leerPersonas::generarArbol()
 {
     std::ifstream ifs(dirArchivo, std::ifstream::in);
 
     if (!ifs.is_open())
     {
         std::cerr << "Error leyendo archivo " << dirArchivo << std::endl;
-        return -1;
     }
     
-    std::string linea {}; 
+    std::string linea {""}; 
 
     int id {0};
     std::string nombre {""};
@@ -44,7 +44,7 @@ int leerPersonas::leer()
 
         stream >> id >> nombre >> apellido >> email >> tipo >> idSupervisor;
 
-        std::string nombreCompleto = nombre + apellido;
+        std::string nombreCompleto = nombre + " " + apellido;
         double salarioBruto {0};
         double salarioNeto {0};
 
@@ -61,12 +61,10 @@ int leerPersonas::leer()
             salarioNeto = salarioBruto;
         }
 
-        arbolEmpleados *arbol = new arbolEmpleados();
-
-        arbol->AgregarNodo(id, nombreCompleto, idSupervisor, salarioBruto, salarioNeto);
+        this->arbol->AgregarNodo(id, nombreCompleto, idSupervisor, salarioBruto, salarioNeto);
     }
 
     ifs.close();
 
-    return 0;
+    return arbol;
 }

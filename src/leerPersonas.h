@@ -3,14 +3,17 @@
 
 #include <string>
 
+#include "arbolEmpleados.h"
+
 class leerPersonas{
 
     std::string dirArchivo = "";
+    arbolEmpleados *arbol = new arbolEmpleados();
 
     public:
 
         leerPersonas(std::string dirArchivo = "../Personas.txt");
-        virtual int leer();
+        virtual arbolEmpleados* generarArbol();
 };
 
 #endif
