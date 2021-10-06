@@ -1,7 +1,7 @@
 #include "nodo.h"
 #include <iostream>
 
-Nodo::Nodo(int id, std::string& Nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto)
+Nodo::Nodo(int id, std::string& nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto)
 {
     this->id = id;
     this->nombre = nombre;
@@ -35,6 +35,7 @@ std::string Nodo::devolverNombre(Nodo *nodo){
 void Nodo::cambiarNombreSupervisor(Nodo *nodo, Nodo *nodoPadre){
 
     std::string nombreSupervisor = nodoPadre->nombre;
+    nodo->nombreSupervisor = nombreSupervisor;
 }
 
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)

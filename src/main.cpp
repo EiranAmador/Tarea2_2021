@@ -1,6 +1,7 @@
 #ifndef UNIT_TEST
 
 #include <iostream>
+#include <fstream>
 
 #include "../src/leerPersonas.h"
 #include "../src/arbolEmpleados.h"
@@ -12,7 +13,10 @@ int main() {
     leerPersonas *lectura = new leerPersonas();
     arbolEmpleados *arbol = new arbolEmpleados();
     arbol = lectura->generarArbol();
-    std::cout << *arbol;
+
+    ofstream archivoSalida("../Reporte.csv");
+    archivoSalida << *arbol;
+    archivoSalida.close();
 
     return 0;
 }
