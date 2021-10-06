@@ -5,6 +5,7 @@
 #include <sstream>
 
 arbolEmpleados::arbolEmpleados() {
+    
     this->raiz = nullptr;
 }
 
@@ -19,8 +20,10 @@ arbolEmpleados::~arbolEmpleados() {
 }
 
 
-void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto)
+void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, double salarioBruto, double salarioNeto)
 {
+    std::string nombreSupervisor = "";
+
     Nodo *nodo = new Nodo(id, nombre, idSupervisor, nombreSupervisor, salarioBruto, salarioNeto);
 
     // Si idPadre = 0, es el nodo raíz
@@ -32,6 +35,7 @@ void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, s
     {
         // Buscar ese nodo padre
         Nodo *nodoPadre = this->elementos.at(idSupervisor);
+        nodo->cambiarNombreSupervisor(nodo, nodoPadre);
         nodoPadre->AgregarHijo(nodo);        
     }
 
@@ -70,7 +74,7 @@ std::istream& operator >> (std::istream &i, arbolEmpleados &arbol)
         std::istringstream stream(linea); 
         stream >> id >> nombre >> idSupervisor >> nombreSupervisor >> salarioBruto >> salarioNeto;
 
-        arbol.AgregarNodo(id, nombre, idSupervisor, nombreSupervisor, salarioBruto, salarioNeto);
+        arbol.AgregarNodo(id, nombre, idSupervisor, salarioBruto, salarioNeto);
     }
 
     return i;

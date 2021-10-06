@@ -5,7 +5,7 @@
 
 class leerNomina{
 
-    std::string dirArchivo = "../Nomina.txt";
+    std::string dirArchivo = "";
 
     public:
         leerNomina(std::string dirArchivo = "../Nomina.txt");

@@ -20,6 +20,10 @@ class Nodo {
 
     void AgregarHijo(Nodo *hijo);
 
+    void cambiarNombreSupervisor(Nodo *nodo, Nodo *nodoPadre);
+
+    std::string devolverNombre(Nodo *nodo);
+
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);
 };
 

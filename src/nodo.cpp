@@ -27,6 +27,16 @@ void Nodo::AgregarHijo(Nodo *hijo) {
     this->hijos.push_back(hijo);
 }
 
+std::string Nodo::devolverNombre(Nodo *nodo){
+
+    return Nodo::nombre;
+}
+
+void Nodo::cambiarNombreSupervisor(Nodo *nodo, Nodo *nodoPadre){
+
+    std::string nombreSupervisor = nodoPadre->nombre;
+}
+
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)
 {
     // Imprimir información del nodo

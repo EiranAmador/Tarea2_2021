@@ -3,6 +3,9 @@
 #include <sstream>
 #include <fstream>
 #include "leerPersonas.h"
+#include "leerNomina.h"
+#include "leerHoras.h"
+#include "arbolEmpleados.h"
 
 leerPersonas::leerPersonas(std::string dirArchivo){
 
@@ -40,6 +43,27 @@ int leerPersonas::leer()
         0;
 
         stream >> id >> nombre >> apellido >> email >> tipo >> idSupervisor;
+
+        std::string nombreCompleto = nombre + apellido;
+        double salarioBruto {0};
+        double salarioNeto {0};
+
+        if(tipo == 1){
+
+            leerNomina *nomina = new leerNomina();
+            salarioBruto = nomina->salarioBruto(id);
+            salarioNeto = salarioBruto - (salarioBruto * 0.07);
+        }
+        else{
+
+            leerHoras *horas = new leerHoras();
+            salarioBruto = horas->salarioHoras(id);
+            salarioNeto = salarioBruto;
+        }
+
+        arbolEmpleados *arbol = new arbolEmpleados();
+
+        arbol->AgregarNodo(id, nombreCompleto, idSupervisor, salarioBruto, salarioNeto);
     }
 
     ifs.close();

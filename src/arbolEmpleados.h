@@ -13,7 +13,7 @@ class arbolEmpleados {
     public:
     arbolEmpleados();
     ~arbolEmpleados();
-    void AgregarNodo(int id, std::string nombre, int idSupervisor, std::string  nombreSupervisor, double salarioBruto, double salarioNeto);
+    void AgregarNodo(int id, std::string nombre, int idSupervisor, double salarioBruto, double salarioNeto);
 
     friend std::ostream& operator << (std::ostream &o, const arbolEmpleados &arbolEmpleados);
     friend std::istream& operator >> (std::istream &i, arbolEmpleados &arbolEmpleados);

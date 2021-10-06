@@ -5,11 +5,11 @@
 
 class leerPersonas{
 
-    std::string dirArchivo = "../Personas.txt";
+    std::string dirArchivo = "";
 
     public:
 
-        leerPersonas(std::string dirArchivo);
+        leerPersonas(std::string dirArchivo = "../Personas.txt");
         virtual int leer();
 };
 

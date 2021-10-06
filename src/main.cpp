@@ -2,14 +2,14 @@
 
 #include <iostream>
 
-#include "../src/leerNomina.h"
+#include "../src/leerPersonas.h"
 
 using namespace std;
 
 int main() {   
 
-    leerNomina *lectura = new leerNomina();
-    double res = lectura->salarioBruto(7);
+    leerPersonas *lectura = new leerPersonas();
+    lectura->leer();
 
     return 0;
 }

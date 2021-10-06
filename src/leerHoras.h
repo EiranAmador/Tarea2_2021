@@ -5,10 +5,10 @@
 
 class leerHoras {
 
-    std::string dirArchivo = "../HorasTrabajadas.txt";
+    std::string dirArchivo = "";
 
     public:
-        leerHoras(std::string dirArchivo);
+        leerHoras(std::string dirArchivo = "../HorasTrabajadas.txt");
         virtual double salarioHoras(int idEmpleado);
 };
 
