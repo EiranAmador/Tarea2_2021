@@ -1,14 +1,14 @@
 #ifndef ARBOLEMPLEADOS_H
 #define ARBOLEMPLEADOS_H
 
-#include "nodo.h"
+#include "empleado.h"
 #include <map>
 #include <iostream>
 
 class arbolEmpleados {
 
-    Nodo *raiz;
-    std::map<int, Nodo *> elementos;
+    Empleado *raiz;
+    std::map<int, Empleado *> elementos;
 
     public:
     arbolEmpleados();

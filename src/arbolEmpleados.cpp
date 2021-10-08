@@ -1,6 +1,6 @@
 #include <map>
 #include "arbolEmpleados.h"
-#include "nodo.h"
+#include "empleado.h"
 #include <string>
 #include <sstream>
 
@@ -24,7 +24,7 @@ void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, d
 {
     std::string nombreSupervisor = "";
 
-    Nodo *nodo = new Nodo(id, nombre, idSupervisor, nombreSupervisor, salarioBruto, salarioNeto);
+    Empleado *nodo = new Empleado(id, nombre, idSupervisor, nombreSupervisor, salarioBruto, salarioNeto);
 
     // Si idPadre = 0, es el nodo raíz
     if (idSupervisor == 0)
@@ -34,18 +34,18 @@ void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, d
     else
     {
         // Buscar ese nodo padre
-        Nodo *nodoPadre = this->elementos.at(idSupervisor);
+        Empleado *nodoPadre = this->elementos.at(idSupervisor);
         nodo->cambiarNombreSupervisor(nodo, nodoPadre);
         nodoPadre->AgregarHijo(nodo);        
     }
 
     // Agregar nodo al índice
-    this->elementos.insert(std::pair<int,Nodo *>(id, nodo));
+    this->elementos.insert(std::pair<int,Empleado *>(id, nodo));
 }
 
 std::ostream& operator << (std::ostream &o, const arbolEmpleados &arbol)
 {
-    Nodo* raiz = arbol.raiz;
+    Empleado* raiz = arbol.raiz;
     o << *(raiz);
 
     return o;
