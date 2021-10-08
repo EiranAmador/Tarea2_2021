@@ -3,12 +3,12 @@
 
 #include <string>
 
-class leerHoras {
+class Horas {
 
     std::string dirArchivo = "";
 
     public:
-        leerHoras(std::string dirArchivo = "../HorasTrabajadas.txt");
+        Horas(std::string dirArchivo = "../HorasTrabajadas.txt");
         virtual double salarioHoras(int idEmpleado);
 };
 

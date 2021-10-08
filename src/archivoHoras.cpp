@@ -2,14 +2,14 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "leerNomina.h"
+#include "archivoHoras.h"
 
-leerNomina::leerNomina(std::string dirArchivo){
+Horas::Horas(std::string dirArchivo){
 
     this->dirArchivo = dirArchivo;
 }
 
-double leerNomina::salarioBruto(int idEmpleado)
+double Horas::salarioHoras(int idEmpleado)
 {
     std::ifstream ifs(dirArchivo, std::ifstream::in);
 
@@ -21,21 +21,24 @@ double leerNomina::salarioBruto(int idEmpleado)
     
     std::string linea {}; 
 
+
     int id {0};
-    double pagoBruto {0};
+    double montoHora {0};
+    double horasLaboradas {0};
 
     while (std::getline(ifs, linea)) {
         
         std::istringstream stream(linea);
 
         id = 0;
-        pagoBruto = 0;
+        montoHora = 0;
+        horasLaboradas = 0;
 
-        stream >> id >> pagoBruto;
+        stream >> id >> montoHora >> horasLaboradas;
 
         if(id == idEmpleado){
 
-            return pagoBruto;
+            return montoHora * horasLaboradas;
         }
     }
 

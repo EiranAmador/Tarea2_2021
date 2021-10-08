@@ -3,12 +3,12 @@
 
 #include <string>
 
-class leerNomina{
+class Nomina{
 
     std::string dirArchivo = "";
 
     public:
-        leerNomina(std::string dirArchivo = "../Nomina.txt");
+        Nomina(std::string dirArchivo = "../Nomina.txt");
         virtual double salarioBruto(int idEmpleado);
 };
 

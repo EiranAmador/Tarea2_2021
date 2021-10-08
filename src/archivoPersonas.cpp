@@ -2,18 +2,18 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "leerPersonas.h"
-#include "leerNomina.h"
-#include "leerHoras.h"
+#include "archivoPersonas.h"
+#include "archivoNomina.h"
+#include "archivoHoras.h"
 #include "arbolEmpleados.h"
 
-leerPersonas::leerPersonas(std::string dirArchivo){
+Personas::Personas(std::string dirArchivo){
 
     this->dirArchivo = dirArchivo;
     this->arbol = new arbolEmpleados();
 }
 
-arbolEmpleados* leerPersonas::generarArbol()
+arbolEmpleados* Personas::generarArbol()
 {
     std::ifstream ifs(dirArchivo, std::ifstream::in);
 
@@ -50,13 +50,13 @@ arbolEmpleados* leerPersonas::generarArbol()
 
         if(tipo == 1){
 
-            leerNomina *nomina = new leerNomina();
+            Nomina *nomina = new Nomina();
             salarioBruto = nomina->salarioBruto(id);
             salarioNeto = salarioBruto - (salarioBruto * 0.07);
         }
         else{
 
-            leerHoras *horas = new leerHoras();
+            Horas *horas = new Horas();
             salarioBruto = horas->salarioHoras(id);
             salarioNeto = salarioBruto;
         }

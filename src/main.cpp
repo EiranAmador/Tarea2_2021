@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "../src/leerPersonas.h"
+#include "../src/archivoPersonas.h"
 #include "../src/arbolEmpleados.h"
 #include "../src/generarArchivo.h"
 
@@ -11,9 +11,9 @@ using namespace std;
 
 int main() {   
 
-    leerPersonas *lectura = new leerPersonas();
+    Personas *archivoPersonas = new Personas();
     arbolEmpleados *arbol = new arbolEmpleados();
-    arbol = lectura->generarArbol();
+    arbol = archivoPersonas->generarArbol();
 
     generarArchivo archivoSalida("../Reporte.csv", arbol);
     archivoSalida.generar();

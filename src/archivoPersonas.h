@@ -5,14 +5,14 @@
 
 #include "arbolEmpleados.h"
 
-class leerPersonas{
+class Personas{
 
     std::string dirArchivo = "";
     arbolEmpleados *arbol = new arbolEmpleados();
 
     public:
 
-        leerPersonas(std::string dirArchivo = "../Personas.txt");
+        Personas(std::string dirArchivo = "../Personas.txt");
         virtual arbolEmpleados* generarArbol();
 };
 

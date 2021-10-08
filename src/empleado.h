@@ -15,7 +15,7 @@ class Empleado {
     std::vector<Empleado *> hijos;
     
     public:
-    Empleado(int id, std::string& nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto);
+    Empleado(int id, std::string& nombre, int idSupervisor, std::string& nombreSupervisor, double salarioBruto, double salarioNeto);
     ~Empleado();
 
     void AgregarHijo(Empleado *hijo);

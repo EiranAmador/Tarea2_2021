@@ -1,7 +1,7 @@
 #include "empleado.h"
 #include <iostream>
 
-Empleado::Empleado(int id, std::string& nombre, int idSupervisor, std::string nombreSupervisor, double salarioBruto, double salarioNeto)
+Empleado::Empleado(int id, std::string& nombre, int idSupervisor, std::string& nombreSupervisor, double salarioBruto, double salarioNeto)
 {
     this->id = id;
     this->nombre = nombre;
