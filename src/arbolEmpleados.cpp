@@ -19,7 +19,6 @@ arbolEmpleados::~arbolEmpleados() {
 
 }
 
-
 void arbolEmpleados::AgregarNodo(int id, std::string nombre, int idSupervisor, double salarioBruto, double salarioNeto)
 {
     std::string nombreSupervisor = "";

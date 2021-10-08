@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "../src/leerNomina.h"
-#include "../src/leerHoras.h"
+#include "../src/archivoNomina.h"
+#include "../src/archivoHoras.h"
 #include "../src/generarArchivo.h"
 #include "../src/arbolEmpleados.h"
 
@@ -9,7 +9,7 @@ namespace {
     
     TEST(ArchivosTests, Devolver_salario_por_nomina) {
 
-        leerNomina lectura("../Nomina.txt");
+        Nomina lectura("../Nomina.txt");
         double resultado = lectura.salarioBruto(7);
 
         double resultadoEsperado = 4500.41;
@@ -18,7 +18,7 @@ namespace {
     }
     TEST(ArchivosTests, Devolver_salario_por_horas) {
 
-        leerHoras lectura("../HorasTrabajadas.txt");
+        Horas lectura("../HorasTrabajadas.txt");
         double resultado = lectura.salarioHoras(473);
 
         double resultadoEsperado = 43.66*12;
