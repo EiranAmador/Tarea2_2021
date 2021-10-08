@@ -5,6 +5,7 @@
 
 #include "../src/leerPersonas.h"
 #include "../src/arbolEmpleados.h"
+#include "../src/generarArchivo.h"
 
 using namespace std;
 
@@ -14,9 +15,8 @@ int main() {
     arbolEmpleados *arbol = new arbolEmpleados();
     arbol = lectura->generarArbol();
 
-    ofstream archivoSalida("../Reporte.csv");
-    archivoSalida << *arbol;
-    archivoSalida.close();
+    generarArchivo archivoSalida("../Reporte.csv", arbol);
+    archivoSalida.generar();
 
     return 0;
 }
